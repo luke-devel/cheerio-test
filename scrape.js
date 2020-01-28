@@ -28,6 +28,16 @@ request('https://open.spotify.com/artist/' + arstistId + '/about', (error, respo
             if (err) throw err;
         })
 
+        const relatedArtists = $('.cover.artist');
+        var relatedArtistIds = [];
+        $('.cover.artist').each(function () {
+            var link = $(this).attr('href');
+            relatedArtistIds.push({ "link": link });
+        });
+
+        // logs related artist ids to console.
+        console.log(relatedArtistIds);
+
         console.log('Scraping Done...');
     }
 });
