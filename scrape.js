@@ -36,8 +36,9 @@ request('https://open.spotify.com/artist/' + arstistId + '/about', (error, respo
         });
 
         // logs related artist ids to console.
+        console.log('\nRelated artist Ids:');
         console.log(relatedArtistIds);
 
-        console.log('Scraping Done...');
+        console.log('\nScraping Done...');
     }
 });
