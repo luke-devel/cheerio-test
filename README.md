@@ -2,4 +2,8 @@
 
 To run:
 
-go to /cheerio-test and type **node scrape.js** in console.
+1. Clone this repository
+
+2. Run **npm install** in console
+
+3. Go to /cheerio-test and run **node scrape.js** in console.
