@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 const fs = require('fs');
 
-var arstistID = '3yY2gUcIsjMr8hjo51PoJ8'
+let arstistID = '3yY2gUcIsjMr8hjo51PoJ8'
 request('https://open.spotify.com/artist/' + arstistID + '/about', (error, response, html) => {
     if (!error && response.statusCode == 200) {
 
@@ -55,6 +55,8 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
 
                 // Displays Spotify genres of specified artist
                 console.log('\nArtist Genres:');
+
+                // artistGenres is an object of current Spotify artist genres
                 console.log(artistGenres);
 
                 // Assigns spotifyObject.insights.cities to 'cityData' object
@@ -62,6 +64,8 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
 
                 // Displays Spotify city listener data of specified artist
                 console.log('\nArtist Cities With Listener Data:')
+
+                // cityData is an object of current Spotify artist city listener data
                 console.log(cityData);
 
                 // Scrapes list of Spotify related artists with cheerio
@@ -74,6 +78,8 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
 
                 // Displays Spotify related artist IDs to console.
                 console.log('\nRelated artist Ids:');
+
+                // relatedArtistIDs is an object of related artists to the current Spotify artist
                 console.log(relatedArtistIDs);
 
                 console.log('\n ~~~~~~~~~~~~~~~~~~~~ Scraping Complete ~~~~~~~~~~~~~~~~~~~~');
