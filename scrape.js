@@ -8,26 +8,25 @@ const writeStream = fs.createWriteStream('post.csv');
 // Write Headers
 // writeStream.write(`Title,Link,Date \n`);
 
+
+// gb 4gHs8pWsgZpndQZKs6QVRH
+// dd 5Z3IWpvwOvoaWodujHw7xh
 var arstistId = '5Z3IWpvwOvoaWodujHw7xh'
 request('https://open.spotify.com/artist/' + arstistId + '/about', (error, response, html) => {
     if (!error && response.statusCode == 200) {
         const $ = cheerio.load(html);
-        fs.writeFile('Output.html', html, (err) => {
 
-            // In case of a error throw err. 
-            if (err) throw err;
-        })
-        const listItem = $('.horizontal-list__item');
+        eval($('script')[7].children[0].data)
 
-        var listenerOutput = listItem.text();
-        console.log(listenerOutput);
+        // 5kyTqxwLNQk50dJZIzFQuq
+        // Retrieve
+        console.log('\nArtist Genres:')
+        console.log(Spotify.Entity.genres);
 
-        fs.writeFile('listenerData.txt', listenerOutput, (err) => {
+        console.log('\nArtist Cities With Listener Data:')
+        console.log(Spotify.Entity.insights.cities);
 
-            // In case of a error throw err. 
-            if (err) throw err;
-        })
-
+        // Creates list of related artists
         const relatedArtists = $('.cover.artist');
         var relatedArtistIds = [];
         $('.cover.artist').each(function () {
