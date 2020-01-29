@@ -12,6 +12,7 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
 
         // creates accessable variables
         let rawSpotifyData;
+        let artistName;
         let artistGenres = [];
         let cityData = [];
         let relatedArtistIDs = [];
@@ -49,6 +50,17 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
             (function (spotifyObject) {
 
                 console.log('\n~~~~~~~~~~~~~~~~~~~~ Spotify Web Scraping Using Cheerio ~~~~~~~~~~~~~~~~~~~~');
+
+                // Assigns spotifyObject.name to 'artistName' variable
+                artistName = spotifyObject.name
+
+                // Displays Spotify artist name of specified artist id
+                // artistGenres is an object of current Spotify artist genres
+                console.log('\nArtist Name: ' + artistName);
+
+                // Display Spotify artist ID
+                console.log('\nArtist ID: ' + arstistID);
+
 
                 // Assigns spotifyObject.genres to 'artistGenres' object
                 artistGenres = spotifyObject.genres;
