@@ -3,7 +3,6 @@ const cheerio = require('cheerio');
 
 const fs = require('fs');
 
-
 var arstistID = '3yY2gUcIsjMr8hjo51PoJ8'
 request('https://open.spotify.com/artist/' + arstistID + '/about', (error, response, html) => {
     if (!error && response.statusCode == 200) {
@@ -86,4 +85,3 @@ request('https://open.spotify.com/artist/' + arstistID + '/about', (error, respo
             );
     }
 });
-
