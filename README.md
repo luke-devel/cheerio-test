@@ -2,4 +2,4 @@
 
 To run:
 
-got to root and run --> node scrape.js
+go to /cheerio-test and type **node scrape.js** in console.
